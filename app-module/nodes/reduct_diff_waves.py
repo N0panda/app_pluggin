@@ -14,4 +14,5 @@ class Log(Node):
     def update(self):
         if not self.i.ready():
             return
-#        self.o = np.log(self.i)
+        self.o = self.i
+        self.o.data = np.log(self.o.data)
