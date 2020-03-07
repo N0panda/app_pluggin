@@ -21,5 +21,5 @@ class Scoring(Node):
     def update(self):
         if not self.i.ready():
             return
-        print(self.i)
+        print(self.i.data)
 
