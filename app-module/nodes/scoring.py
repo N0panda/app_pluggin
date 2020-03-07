@@ -22,5 +22,5 @@ class Scoring(Node):
         if not self.i.ready():
             return
         data = self.i.data
-        print(data.to_dict())
+        print(data['A1_delta'].values[0])
 
