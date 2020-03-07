@@ -12,7 +12,6 @@ class Scoring(Node):
     """
     def __init__(self, w_delta=0., w_theta=0., w_alpha=0., w_beta=0., w_gamma=0.):
         """ Weight for each waves """
-        #self.weight = np.array[w_delta, w_theta, w_alpha, w_beta, w_gamma] # np.array of float
         self.w_delta = w_delta   #"(float)"
         self.w_theta = w_theta   #"(float)"
         self.w_alpha = w_alpha   #"(float)"
@@ -28,13 +27,11 @@ class Scoring(Node):
         alpha = data['A1_alpha'].values[0]
         beta = data['A1_beta'].values[0]
         gamma = data['A1_gamma'].values[0]
-       # waves = np.array[delta, theta, alpha, beta, gamma]
-       # print(error)
-       # print(len(tab))
-       # sum_ = np.sum(tab)
-       # print(sum_)
-       # score = 0
-       # for i in range(len(tab)):
-        #    score += (waves[i] / sum_) * self.weight[i]
-        #self.o.data = score
+        waves = np.array[delta, theta, alpha, beta, gamma]
+        weight = np.array[self.w_delta, self.w_theta, self.w_alpha, self.w_beta, self.w_gamma]
+        sum_ = np.sum(tab)
+        score = 0
+        for i in range(len(tab)):
+            score += (waves[i] / sum_) * weight[i]
+        self.o.data = score
 
