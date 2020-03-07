@@ -31,7 +31,7 @@ class Scoring(Node):
         waves = np.array([delta, theta, alpha, beta, gamma])
         sum_ = np.sum(tab)
         score = 0
-        for i in range(len(tab)):
+        for i in range(len(waves)):
             score += (waves[i] / sum_) * self.weight[i]
         self.o.data = score
 
