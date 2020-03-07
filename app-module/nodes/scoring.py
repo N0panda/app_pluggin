@@ -29,10 +29,9 @@ class Scoring(Node):
         beta = data['A1_beta'].values[0]
         gamma = data['A1_gamma'].values[0]
         waves = np.array([delta, theta, alpha, beta, gamma])
-        print(waves.shape)
         sum_ = np.sum(waves)
         score = 0
-        for i in range(len(waves)):
+        for i in range(waves.shape[0]):
             score += (waves[i] / sum_) * self.weight[i]
         self.o.data = score
 
