@@ -22,5 +22,5 @@ class Scoring(Node):
         if not self.i.ready():
             return
         data = self.i.data
-        print(data.columns)
+        print(data.to_dict())
 
