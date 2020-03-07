@@ -21,5 +21,5 @@ class Scoring(Node):
     def update(self):
         if not self.i.ready():
             return
-        print(type(self.i.data))
+        print(self.i.data['A1_delta'])
 
