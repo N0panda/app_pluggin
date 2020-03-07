@@ -22,5 +22,10 @@ class Scoring(Node):
         if not self.i.ready():
             return
         data = self.i.data
-        print(data['A1_delta'].values[0])
+        delta = data['A1_delta'].values[0]
+        theta = data['A1_theta'].values[0]
+        alpha = data['A1_alpha'].values[0]
+        beta = data['A1_beta'].values[0]
+        gamma = data['A1_gamma'].values[0]
+        print(delta, theta, alpha, beta, gamma)
 
