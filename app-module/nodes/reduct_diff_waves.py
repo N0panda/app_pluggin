@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import json
 
-class Log_(Node):
+class Log(Node):
     """ Do a the log() of each element in the Dataframe
 
     Attributes:
