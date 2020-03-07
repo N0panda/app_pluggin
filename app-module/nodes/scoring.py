@@ -1,4 +1,4 @@
-from timeflux.core.nodes import Node
+from timeflux.core.node import Node
 import panda as pd
 import numpy as np
 
