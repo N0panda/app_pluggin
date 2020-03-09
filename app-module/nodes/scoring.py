@@ -24,16 +24,16 @@ class Scoring(Node):
             return
         data = self.i.data
         delta = data['A1_delta'].values[0]
+        print(delta)
         theta = data['A1_theta'].values[0]
+        print(theta)
         alpha = data['A1_alpha'].values[0]
         beta = data['A1_beta'].values[0]
         gamma = data['A1_gamma'].values[0]
         waves = np.array([delta, theta, alpha, beta, gamma])
         sum_ = np.sum(waves)
         score = 0
-        print("size = " + str(len(waves)))
         for i in range(len(waves)):
             score += (waves[i] / sum_) * self.weight[i]
-            print(score)
         self.o.data = pd.DataFrame([{'score': score}])
 
