@@ -19,13 +19,11 @@ class ConcatResult(Node):
 
     def update(self):
         if not (self.i_p1.ready() & self.i_p2.ready()):
-            return print("not ready")
-        print(self.i_p1.meta)
-        print(self.i_p1.data)
-        #p1 = self.i_p1.meta.rename(columns={"score": "score_p1"})
-        #p2 = self.i_p2.meta.rename(columns={"score": "score_p2"})
-        #diff = p1['score_p1'].values[0] - p2['score_p2'].values[0]
-        #result = pd.DataFrame([{'diff_p1_p2': diff}])
-        #frames = [p1, p2, result]
-        #self.o.data = pd.concate(frames)
+            return
+        p1 = self.i_p1.meta.rename(columns={"score": "score_p1"})
+        p2 = self.i_p2.meta.rename(columns={"score": "score_p2"})
+        diff = p1['score_p1'].values[0] - p2['score_p2'].values[0]
+        result = pd.DataFrame([{'diff_p1_p2': diff}])
+        frames = [p1, p2, result]
+        self.o.data = pd.concate(frames)
     
