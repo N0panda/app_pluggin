@@ -10,7 +10,7 @@ class Scoring(Node):
         o (Port): Default output, provides DataFrame.
 
     """
-    def __init__(self, w_delta=0., w_theta=0., w_alpha=0., w_beta=0., w_gamma=0.):
+    def __init__(self, w_delta=1., w_theta=1., w_alpha=1., w_beta=1., w_gamma=1.):
         """ Weight for each waves """
         self.weight = np.array([w_delta, w_theta, w_alpha, w_beta, w_gamma])
         self.w_delta = w_delta   #"(float)"
@@ -27,13 +27,11 @@ class Scoring(Node):
         theta = data['A1_theta'].values[0]
         alpha = data['A1_alpha'].values[0]
         beta = data['A1_beta'].values[0]
-        print(type(theta))
         gamma = data['A1_gamma'].values[0]
         waves = np.array([delta, theta, alpha, beta, gamma])
-        print(waves)
         sum_ = np.sum(waves)
         score = 0
         for i in range(len(waves)):
-            score += (waves[0][i] / sum_) * self.weight[i]
+            score += (waves[i] / sum_) * self.weight[i]
         self.o.data = pd.DataFrame([{'score': score}])
 
