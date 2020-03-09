@@ -24,13 +24,13 @@ class Scoring(Node):
             return
         data = self.i.data
         delta = data['A1_delta'].values[0]
-        print(delta)
         theta = data['A1_theta'].values[0]
-        print(theta)
         alpha = data['A1_alpha'].values[0]
         beta = data['A1_beta'].values[0]
+        print(type(theta))
         gamma = data['A1_gamma'].values[0]
         waves = np.array([delta, theta, alpha, beta, gamma])
+        print(waves)
         sum_ = np.sum(waves)
         score = 0
         for i in range(len(waves)):
