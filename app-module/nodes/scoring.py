@@ -6,8 +6,8 @@ class Scoring(Node):
     """ --( note a ajouter )--
 
         Attributes:
-        i (Port): Default input, expects DataFrame.
-        o (Port): Default output, provides DataFrame.
+        i (Port): Default input,  expects DataFrame.
+        o (Port): Default output,  provides DataFrame.
 
     """
     def __init__(self, w_delta=1., w_theta=1., w_alpha=1., w_beta=1., w_gamma=1.):
