@@ -22,6 +22,7 @@ class ConcatResult(Node):
             return
         p1 = pd.DataFrame(self.i_p1.meta).rename(columns={"score": "score_p1"})
         p2 = pd.DataFrame(self.i_p2.meta).rename(columns={"score": "score_p2"})
+        print(p1, p2)
         diff = p1['score_p1'].values[0] - p2['score_p2'].values[0]
         result = pd.DataFrame([{'diff_p1_p2': diff}])
         frames = [p1, p2, result]
