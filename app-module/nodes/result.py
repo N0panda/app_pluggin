@@ -18,8 +18,8 @@ class ConcatResult(Node):
         pass
 
     def update(self):
-        if not self.i_p1.ready() & self.i_p2.ready():
-            return
+        if not (self.i_p1.ready() & self.i_p2.ready()):
+            return print("not ready")
         print(self.i_p1.meta)
         print(self.i_p1.data)
         #p1 = self.i_p1.meta.rename(columns={"score": "score_p1"})
