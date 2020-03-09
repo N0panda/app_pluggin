@@ -18,7 +18,7 @@ class ConcatResult(Node):
         pass
 
     def update(self):
-        if not self.i.ready():
+        if not self.i_p1.ready() & self.i_p2.ready():
             return
         print(self.i_p1.meta)
         print(self.i_p1.data)
