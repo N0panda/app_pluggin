@@ -34,6 +34,6 @@ class Scoring(Node):
         sum_ = np.sum(waves)
         score = 0
         for i in range(len(waves)):
-            score += (waves[i] / sum_) * self.weight[i]
+            score += (waves[0][i] / sum_) * self.weight[i]
         self.o.data = pd.DataFrame([{'score': score}])
 
