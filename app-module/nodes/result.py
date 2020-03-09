@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from timeflux.core.node import Node
 
-class Concat_result(Node):
+class ConcatResult(Node):
 
     """ Concat p1 and p2 score and add the diff
         [{score_p1: (float), score_p2: (float), diff_p1_p2: (float)]
