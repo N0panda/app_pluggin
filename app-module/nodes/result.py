@@ -18,6 +18,8 @@ class ConcatResult(Node):
         pass
 
     def update(self):
+        if not self.i.ready():
+            return
         print(self.i_p1.meta)
         print(self.i_p1.data)
         #p1 = self.i_p1.meta.rename(columns={"score": "score_p1"})
